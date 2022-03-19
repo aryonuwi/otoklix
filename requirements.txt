@@ -57,7 +57,6 @@ six==1.16.0
 sqlparse==0.4.2
 ssh-import-id==5.11
 systemd-python==234
-ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==1.26.5
 usb-creator==0.3.7
