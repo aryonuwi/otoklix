@@ -1,0 +1,1 @@
+web:gunicorn otoklixtest.wsgi
