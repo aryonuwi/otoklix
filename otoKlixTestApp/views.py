@@ -24,6 +24,8 @@ class OtoKlixView(APIView):
 
     def get(self, request, id=None):
         if id:
+            get_object_or_404(otoCrud, id=id)
+            
             item = otoCrud.objects.get(id=id)
             serializer = otoCrudSerializer(item)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -37,9 +39,9 @@ class OtoKlixView(APIView):
         serializer = otoCrudSerializer(item, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({serializer.data})
+            return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
         else:
-            return Response({serializer.errors})
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
     
     def delete(self, request, id=None):
@@ -47,4 +49,4 @@ class OtoKlixView(APIView):
         items = otoCrud.objects.get(id=id)
         serializer = otoCrudSerializer(items)
         item.delete()
-        return Response({serializer.data})
+        return Response(serializer.data,status=status.HTTP_204_NO_CONTENT)
