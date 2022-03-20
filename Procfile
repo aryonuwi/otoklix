@@ -1,1 +1,1 @@
-web:gunicorn otoklixtest.wsgi
+web: gunicorn otoklix.wsgi --log-file -
