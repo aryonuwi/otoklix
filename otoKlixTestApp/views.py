@@ -23,9 +23,10 @@ class OtoKlixView(APIView):
             return Response({serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, id=None):
+        
         if id:
             get_object_or_404(otoCrud, id=id)
-            
+
             item = otoCrud.objects.get(id=id)
             serializer = otoCrudSerializer(item)
             return Response(serializer.data, status=status.HTTP_200_OK)
