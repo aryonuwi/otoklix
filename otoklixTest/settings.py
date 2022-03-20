@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)b8yl0*dh2mu5=h8u1xjj16+xa@yarcu)n@b0=o%s+*f)bla#1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [' https://otoklixtest.herokuapp.com/']
+ALLOWED_HOSTS = [' https://otoklixtest.herokuapp.com']
 
 
 # Application definition
