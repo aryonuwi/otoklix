@@ -1,1 +1,0 @@
-web: gunicorn otoklix.wsgi --log-file -
