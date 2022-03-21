@@ -22,7 +22,8 @@ def custom_exception_handler(exc, context):
 def _handle_authenticated_error(exc, context, response):
 
     response.data = {
-        'errors':'Pleace login to proceed'
+        'errors':'Pleace login to proceed',
+        'status_code': response.status_code
     }
 
     return response
